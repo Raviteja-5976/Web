@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('bg-img.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        header{
+            padding: 100px;
+        }
+
+        nav {
+            padding: 20px;
+        }
+
+        footer {
+            padding: 20px;
+        }
+
+        header {
+            background-color: #333;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            color: #666;
+        }
+
+        .section-box {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .project {
+            border: 5px solid #090000;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .social-icons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .social-icons img {
+            width: 40px;
+            margin: 0 10px;
+        }
+
+        /* CSS for Contact Me section */
+        #contact {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        #contact form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        #contact label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        #contact input[type="text"],
+        #contact input[type="email"],
+        #contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        #contact textarea {
+            height: 150px;
+        }
+
+        #contact button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #contact button:hover {
+            background-color: #666;
+        }
+
+        /* CSS for About Me section */
+        #about {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        #about p {
+            margin-bottom: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Raviteja Karnati's Portfolio</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <section id="about" class="section-box">
+        <h2>About Me</h2>
+        <p>I am a student in Guru Nanak Institutions Technical Campus. I am pursuing Computer Science. I am passionate about AI and other new Technologies.</p>
+    </section>
+    <section id="projects" class="section-box">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Task Manager</h3>
+            <p>A task manager web application for handling tasks using python and mysql database.</p>
+        </div>
+        <div class="project">
+            <h3>Voice Assistant</h3>
+            <p>A voice assistant built using python.It is mainly based on gemini api and smtp library.</p>
+        </div>
+    </section>
+    <section id="contact" class="section-box">
+        <h2>Contact Me</h2>
+        <form action="#">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br><br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+    <div class="social-icons">
+        <a href="https://www.linkedin.com/your-profile"><img src="linkdin-logo.png" alt="LinkedIn"></a>
+        <a href="https://github.com/your-profile"><img src="github-logo.png" alt="GitHub"></a>
+        <a href="https://twitter.com/your-profile"><img src="twitter-logo.png" alt="Twitter"></a>
+        <a href="https://www.facebook.com/your-profile"><img src="facebook-logo.png" alt="Facebook"></a>
+    </div>
+    <br><br><br><br><br>
+    <footer>
+        <p>&copy; 2024 Raviteja Karnati</p>
+    </footer>
+    <script>
+      
+        const contactForm = document.querySelector('#contact form');
+        const nameInput = document.querySelector('#name');
+        const emailInput = document.querySelector('#email');
+        const messageInput = document.querySelector('#message');
+
+       
+        contactForm.addEventListener('mouseover', function() {
+            contactForm.style.backgroundcolor = 'lightblue';
+        });
+
+        
+        nameInput.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                emailInput.focus();
+            }
+        });
+
+        
+        emailInput.addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+                messageInput.focus();
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+<!-- Validate  -->

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Details</title>
+<style>
+    /* CSS styles */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 20px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+
+    }
+
+    .container {
+        background-color: cadetblue;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        width: 800px;
+    }
+
+    h1 {
+        color: #333;
+    }
+
+    form {
+        margin-top: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    input[type="text"] {
+        padding: 5px;
+        width: 200px;
+    }
+
+    button[type="submit"] {
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+    .user-details {
+        margin-top: 20px;
+    }
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Sample XML string containing user information
+    const xmlString = `
+    <users>
+        <user>
+            <id>1</id>
+            <name>John Doe</name>
+            <email>john@example.com</email>
+            <age>30</age>
+        </user>
+        <user>
+            <id>2</id>
+            <name>Jane Smith</name>
+            <email>jane@example.com</email>
+            <age>25</age>
+        </user>
+        <user>
+            <id>3</id>
+            <name>Michael Johnson</name>
+            <email>michael@example.com</email>
+            <age>35</age>
+        </user>
+        <user>
+            <id>4</id>
+            <name>Sarah Williams</name>
+            <email>sarah@example.com</email>
+            <age>28</age>
+        </user>
+        <user>
+            <id>5</id>
+            <name>David Brown</name>
+            <email>david@example.com</email>
+            <age>32</age>
+        </user>
+        <user>
+            <id>6</id>
+            <name>Emily Davis</name>
+            <email>emily@example.com</email>
+            <age>27</age>
+        </user>
+        <user>
+            <id>7</id>
+            <name>James Wilson</name>
+            <email>james@example.com</email>
+            <age>31</age>
+        </user>
+        <user>
+            <id>8</id>
+            <name>Olivia Taylor</name>
+            <email>olivia@example.com</email>
+            <age>29</age>
+        </user>
+        <user>
+            <id>9</id>
+            <name>William Anderson</name>
+            <email>william@example.com</email>
+            <age>33</age>
+        </user>
+        <user>
+            <id>10</id>
+            <name>Ava Martinez</name>
+            <email>ava@example.com</email>
+            <age>26</age>
+        </user>
+    </users>`;
+
+    // Parse the XML string
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(xmlString, 'text/xml');
+
+    // Function to get user details by ID
+    function getUserDetailsById(id) {
+        // Find the user element with the specified id
+        const users = xmlDoc.getElementsByTagName('user');
+        for (let i = 0; i < users.length; i++) {
+            const userId = users[i].getElementsByTagName('id')[0].textContent;
+            if (userId === id) {
+                const name = users[i].getElementsByTagName('name')[0].textContent;
+                const email = users[i].getElementsByTagName('email')[0].textContent;
+                const age = users[i].getElementsByTagName('age')[0].textContent;
+                return { name, email, age };
+            }
+        }
+        // Return null if user not found
+        return null;
+    }
+
+    // Function to handle form submission
+    function handleSubmit(event) {
+        event.preventDefault();
+        const userId = document.getElementById('userId').value;
+        const userDetails = getUserDetailsById(userId);
+        if (userDetails) {
+            document.getElementById('userDetails').innerHTML = `
+                <p><strong>Name:</strong> ${userDetails.name}</p>
+                <p><strong>Email:</strong> ${userDetails.email}</p>
+                <p><strong>Age:</strong> ${userDetails.age}</p>
+            `;
+        } else {
+            document.getElementById('userDetails').innerText = 'User not found.';
+        }
+    }
+
+    // Add event listener to the form
+    document.getElementById('userForm').addEventListener('submit', handleSubmit);
+});
+</script>
+</head>
+<body>
+    <div class="container">
+    <h1>User Details</h1>
+    <form id="userForm">
+        <label for="userId">Enter User ID:</label>
+        <input type="text" id="userId" name="userId" required>
+        <button type="submit">Get User Details</button>
+    </form>
+    <div id="userDetails" class="user-details"></div>
+    </div>
+</body>
+</html>

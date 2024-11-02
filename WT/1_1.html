@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+</head>
+<style>
+    body {
+        background-color: rgb(217, 116, 0);
+        text-align: center;
+        align-content: center;
+        
+        
+    }
+
+    form {
+        background-color: blue;
+        width: 200px;
+        text-align: center;
+        height: auto;
+        border-radius: 25px;
+        align-content: center;
+        
+    }
+</style>
+<body>
+    <form action="/login" method="post">
+        <h2>Log In</h2>
+   
+        <div>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required placeholder="Enter your email"><br>
+        </div>
+        <div>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" minlength="8" required placeholder="Your password (min 8 characters)"><br>
+        </div>
+      
+        <button type="submit">Login</button>
+    </form>
+<p><a href="/register" style="text-decoration: none; color: black;">Register Account</a></p>
+<p><a href="/forgotpassword?email=your_email@example.com">Forgot Password?</a></p>
+    
+</body>
+</html>

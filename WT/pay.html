@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+    <style>
+        body {
+    font-family: sans-serif;
+    background-color: rgb(233, 149, 220);
+}
+
+.container {
+    width: 600px;
+    margin: 50px auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #beef98;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+} 
+
+form p {
+    margin-bottom: 10px;
+}
+
+form img {
+    /* Adjust height as needed */
+    height: 30px;
+}
+
+form button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+    background-color: #0056b3;
+} 
+
+    </style>
+    <div class="container">
+        <h1>Online Payment Page</h1>
+        <h2>Billing Address</h2>
+        <form>
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter Your Full Name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter Email Address" required>
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" placeholder="Enter Address" required>
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" placeholder="Enter City" required>
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" placeholder="Enter State" required>
+            <label for="zip">Zip Code:</label>
+            <input type="text" id="zip" name="zip" placeholder="123 456" required>
+        </form>
+        <h2>Payment</h2>
+        <p>Card Accepted:</p>
+        <img src="credit-card.png" alt="Credit Card" width="26 px">
+        <form>
+            <label for="cardName">Name On Card:</label>
+            <input type="text" id="cardName" name="cardName" placeholder="Enter Card Name" required>
+            <label for="cardNumber">Credit Card Number:</label>
+            <input type="text" id="cardNumber" name="cardNumber" placeholder="1111-2222-3333-4444" required>
+            <label for="expMonth">Exp Month:</label>
+            <select id="expMonth" name="expMonth">
+                <option value="">Choose Month</option>
+                <option value="01">January</option>
+                <option value="02">February</option>
+                <option value="03">March</option>
+                <option value="04">April</option>
+                <option value="05">May</option>
+                <option value="06">June</option>
+                <option value="07">July</option>
+                <option value="08">August</option>
+                <option value="09">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+            </select>
+            <label for="expYear">Exp Year:</label>
+            <select id="expYear" name="expYear">
+                <option value="">Choose Year</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+                <option value="2028">2028</option>
+                <option value="2029">2029</option>
+                <option value="2030">2030</option>
+            </select>
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" placeholder="1234" required>
+            <button type="submit">Proceed To Checkout</button>
+        </form>
+    </div>
+    <script>
+        function validateForm() {
+            // Retrieve form fields
+            var fullName = document.getElementById('fullName').value;
+            var email = document.getElementById('email').value;
+            var address = document.getElementById('address').value;
+            var city = document.getElementById('city').value;
+            var state = document.getElementById('state').value;
+            var zip = document.getElementById('zip').value;
+
+
+            if (fullName === "" || email === "" || address === "" || city === "" || state === "" || zip === "") {
+                alert("All fields must be filled out");
+                return false;
+            }
+            return true;
+        }
+
+
+        var submitButton = document.querySelector('button[type="submit"]');
+        submitButton.addEventListener('click', validateForm);
+
+        var formInputs = document.querySelectorAll('input, select');
+        formInputs.forEach(function(input) {
+            input.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                    validateForm();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+<!-- var state = document.getElementById('state').value;
+var zip = document.getElementById('zip').value;
+
+// Check if any of the form fields are empty
+if (fullName === "" || email === "" || address === "" || city === "" || state === "" || zip === "") {
+    alert("All fields must be filled out"); // Alert the user
+    return false; // Prevent form submission
+}
+return true; // Allow form submission if all fields are filled
+}
+
+// Event handling using mouse and keyboard
+var submitButton = document.querySelector('button[type="submit"]'); // Select the submit button
+submitButton.addEventListener('click', validateForm); // Add click event listener to submit button
+
+var formInputs = document.querySelectorAll('input, select'); // Select all input and select elements
+formInputs.forEach(function(input) { // Iterate over each form input
+input.addEventListener('keydown', function(event) { // Add keydown event listener to each input
+    if (event.key === 'Enter') { // Check if the Enter key was pressed
+        event.preventDefault(); // Prevent the default action (form submission)
+        validateForm(); // Validate the form
+    }
+});
+}); -->
