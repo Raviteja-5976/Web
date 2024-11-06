@@ -1,1 +1,0 @@
-currency exchange = "73e433209ea4854f6f248f9cbc4ad1db"

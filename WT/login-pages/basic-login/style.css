@@ -1,0 +1,40 @@
+body {
+    background-color: rgb(217, 116, 0);
+    text-align: center;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form {
+    background-color: rgb(22, 106, 167);
+    width: 200px;
+    text-align: center;
+    height: auto;
+    border-radius: 25px;
+    align-content: center;
+    width: 60vb;
+}
+div {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+input {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+}
+button {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: rgb(217, 116, 0);
+    color: white;
+    font-weight: bold;
+    width: 100px;
+}

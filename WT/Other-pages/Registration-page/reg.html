@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Page</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <h2>Registration Form</h2>
+  <form id="registrationForm" action="" method="post">
+    <div class="form-group"><label for="first-name">First Name</label><input type="text" id="first-name" name="first-name"></div>
+    <div class="form-group"><label for="last-name">Last Name</label><input type="text" id="last-name" name="last-name"></div>
+    <div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone"></div>
+    <div class="form-group"><label for="roll-number">Roll Number</label><input type="text" id="roll-number" name="roll-number"></div>
+    <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email"></div>
+    <div class="form-group"><label for="gender">Gender</label><select id="gender" name="gender"><option value="">Select Gender</option><option value="male">Male</option><option value="female">Female</option><option value="other">Other</option></select></div>
+    <div class="form-group"><label for="branch">Branch</label><select id="branch" name="branch"><option value="">Select Branch</option><option value="CSE">CSE</option><option value="EEE">EEE</option><option value="ECE">ECE</option><option value="MECH">MECH</option><option value="CIVIL">CIVIL</option></select></div>
+    <div class="form-group"><label for="password">Password</label><input type="password" id="password" name="password"></div>
+    <div class="form-group"><label for="confirm-password">Confirm Password</label><input type="password" id="confirm-password" name="confirm-password"></div>
+    <div class="form-group"><label for="address">Address</label><input type="text" id="address" name="address"></div>
+    <div class="form-group"><button type="submit">Register</button></div>
+  </form>
+</div>
+<script src="main.js"></script>
+</body>
+</html>

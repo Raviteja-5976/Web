@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Online Payment Page</h1>
+        <h2>Billing Address</h2>
+        <form>
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter Your Full Name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter Email Address" required>
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" placeholder="Enter Address" required>
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" placeholder="Enter City" required>
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" placeholder="Enter State" required>
+            <label for="zip">Zip Code:</label>
+            <input type="text" id="zip" name="zip" placeholder="123 456" required>
+        </form>
+        <h2>Payment</h2>
+        <p>Card Accepted:</p>
+        <img src="credit-card.png" alt="Credit Card" width="26 px">
+        <form>
+            <label for="cardName">Name On Card:</label>
+            <input type="text" id="cardName" name="cardName" placeholder="Enter Card Name" required>
+            <label for="cardNumber">Credit Card Number:</label>
+            <input type="text" id="cardNumber" name="cardNumber" placeholder="1111-2222-3333-4444" required>
+            <label for="expMonth">Exp Month:</label>
+            <select id="expMonth" name="expMonth">
+                <option value="">Choose Month</option>
+                <option value="01">January</option>
+                <option value="02">February</option>
+                <option value="03">March</option>
+                <option value="04">April</option>
+                <option value="05">May</option>
+                <option value="06">June</option>
+                <option value="07">July</option>
+                <option value="08">August</option>
+                <option value="09">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+            </select>
+            <label for="expYear">Exp Year:</label>
+            <select id="expYear" name="expYear">
+                <option value="">Choose Year</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+                <option value="2028">2028</option>
+                <option value="2029">2029</option>
+                <option value="2030">2030</option>
+            </select>
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" placeholder="1234" required>
+            <button type="submit">Proceed To Checkout</button>
+        </form>
+    </div>
+    <script src="main.js">
+
+    </script>
+</body>
+</html>
+
+

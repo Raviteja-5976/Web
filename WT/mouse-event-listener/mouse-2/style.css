@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #ba17d3;
+}
+
+h1 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin-top: 0;
+}
+
+#myDiv {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    color: white;
+    text-align: center;
+    line-height: 200px;
+    cursor: pointer;
+}

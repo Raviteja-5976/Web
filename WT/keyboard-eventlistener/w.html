@@ -1,0 +1,404 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keyboard Events</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  #eventContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+  }
+
+  #eventDetails {
+    padding: 20px;
+    border: 2px solid #3498db;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  #eventDetails h3 {
+    color: #3498db;
+    margin-bottom: 10px;
+  }
+
+  #eventDetails p {
+    margin: 5px 0;
+  }
+</style>
+</head>
+<body>
+
+<h1>Explore Keyboard Events</h1>
+<div id="eventContainer">
+  <div id="eventDetails">
+    <h3>Press any key on your keyboard</h3>
+    <hr>
+    <p><strong>Event Type:</strong> <span id="eventType"></span></p>
+    <p><strong>Key Code:</strong> <span id="eventKeyCode"></span></p>
+    <p><strong>Key:</strong> <span id="eventKey"></span></p>
+    <p><strong>Key Location:</strong> <span id="eventKeyLocation"></span></p>
+    <p><strong>Ctrl Key Pressed:</strong> <span id="eventCtrlKey"></span></p>
+    <p><strong>Shift Key Pressed:</strong> <span id="eventShiftKey"></span></p>
+    <p><strong>Alt Key Pressed:</strong> <span id="eventAltKey"></span></p>
+    <p><strong>Meta Key Pressed:</strong> <span id="eventMetaKey"></span></p>
+  </div>
+</div>
+
+<script type="text/javascript">
+  function displayKeyEvent(event) {
+    var eventType = document.getElementById('eventType');
+    var eventKeyCode = document.getElementById('eventKeyCode');
+    var eventKey = document.getElementById('eventKey');
+    var eventKeyLocation = document.getElementById('eventKeyLocation');
+    var eventCtrlKey = document.getElementById('eventCtrlKey');
+    var eventShiftKey = document.getElementById('eventShiftKey');
+    var eventAltKey = document.getElementById('eventAltKey');
+    var eventMetaKey = document.getElementById('eventMetaKey');
+
+    eventType.textContent = event.type;
+    eventKeyCode.textContent = event.keyCode;
+    eventKey.textContent = event.key;
+    eventKeyLocation.textContent = event.location;
+    eventCtrlKey.textContent = event.ctrlKey;
+    eventShiftKey.textContent = event.shiftKey;
+    eventAltKey.textContent = event.altKey;
+    eventMetaKey.textContent = event.metaKey;
+  }
+
+  window.addEventListener('keydown', function(event) {
+    displayKeyEvent(event);
+  });
+
+  window.addEventListener('keyup', function(event) {
+    displayKeyEvent(event);
+  });
+
+  window.addEventListener('keypress', function(event) {
+    displayKeyEvent(event);
+  });
+</script>
+
+</body>
+</html>
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: gray;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .key {
+            width: 100px;
+            height: 100px;
+            color: white;
+            background-color: rgb(0, 0, 0);
+            text-align: center;
+            line-height: 100px;
+            font-size: 24px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-gap: 10px;
+        }
+
+        .space-bar {
+            width: 500px;
+            height: 100px;
+            color: white;
+            background-color: rgb(0, 0, 0);
+            text-align: center;
+            line-height: 100px;
+            font-size: 24px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+                
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            grid-gap: 10px;
+            justify-items: center;
+        }
+
+        .key {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            width: 100px;
+            font-size: 24px;
+            margin: 10px;
+            border-radius: 10px;
+            align-self: center;
+        }
+
+        .space-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            width: 500px;
+            font-size: 24px;
+            margin: 10px;
+            border-radius: 10px;
+            align-self: center;
+            border-color: aqua;
+            }
+
+        .keyboard-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: black;
+            width: 580px;
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        .keyboard-row {
+            display: flex;
+            justify-content: center;
+        }
+
+        .key {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text-input {
+            width: 580px;
+            height: 40px;
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding: 5px;
+            border-radius: 5px;
+            
+        }
+
+        .stopwatch {
+            position: fixed;
+            top: 20%;
+            right: 200px;
+            transform: translateY(-50%);
+            font-size: 24px;
+            color:yellow;
+            width: 100px;
+            text-align: center;
+            background-color: black;
+            padding: 10px;
+            border-radius: 10px;
+            shape-outside: -moz-repeating-linear-gradient(45deg, yellow 0px, yellow 10px, black 10px, black 20px);
+
+        }
+
+        #keySpace {
+            width: 200px;
+        }
+                    
+                </style>
+            </head>
+            <body>
+                <h1>Keyboard Event Handling</h1>
+                
+
+                <head>
+
+                </head>
+                <body>
+                    <input type="text" class="text-input" id="textInput" placeholder="Type here...">
+                    <div class="keyboard-container">
+                        <div class="keyboard-row">
+                            <div class="key" id="keyQ">Q</div>
+                            <div class="key" id="keyW">W</div>
+                            <div class="key" id="keyE">E</div>
+                            <div class="key" id="keyR">R</div>
+                            <div class="key" id="keyT">T</div>
+                            <div class="key" id="keyY">Y</div>
+                            <div class="key" id="keyU">U</div>
+                            <div class="key" id="keyI">I</div>
+                            <div class="key" id="keyO">O</div>
+                            <div class="key" id="keyP">P</div>
+                        </div>
+                        <div class="keyboard-row">
+                            <div class="key" id="keyA">A</div>
+                            <div class="key" id="keyS">S</div>
+                            <div class="key" id="keyD">D</div>
+                            <div class="key" id="keyF">F</div>
+                            <div class="key" id="keyG">G</div>
+                            <div class="key" id="keyH">H</div>
+                            <div class="key" id="keyJ">J</div>
+                            <div class="key" id="keyK">K</div>
+                            <div class="key" id="keyL">L</div>
+                        </div>
+                        <div class="keyboard-row">
+                            <div class="key" id="keyZ">Z</div>
+                            <div class="key" id="keyX">X</div>
+                            <div class="key" id="keyC">C</div>
+                            <div class="key" id="keyV">V</div>
+                            <div class="key" id="keyB">B</div>
+                            <div class="key" id="keyN">N</div>
+                            <div class="key" id="keyM">M</div>
+                        </div>
+                        <div class="keyboard-row">
+                            <div class="key" id="keySpace">Space</div>
+                        </div>
+                        <div class="stopwatch">00:00:00</div>
+                    </div>
+
+                    <script>
+                        document.addEventListener('keydown', function(event) {
+                            if (event.key === 'q' || event.key === 'Q') {
+                                document.getElementById('keyQ').style.backgroundColor = 'red';
+                            } else if (event.key === 'w' || event.key === 'W') {
+                                document.getElementById('keyW').style.backgroundColor = 'red';
+                            } else if (event.key === 'e' || event.key === 'E') {
+                                document.getElementById('keyE').style.backgroundColor = 'red';
+                            } else if (event.key === 'r' || event.key === 'R') {
+                                document.getElementById('keyR').style.backgroundColor = 'red';
+                            } else if (event.key === 't' || event.key === 'T') {
+                                document.getElementById('keyT').style.backgroundColor = 'red';
+                            } else if (event.key === 'y' || event.key === 'Y') {
+                                document.getElementById('keyY').style.backgroundColor = 'red';
+                            } else if (event.key === 'u' || event.key === 'U') {
+                                document.getElementById('keyU').style.backgroundColor = 'red';
+                            } else if (event.key === 'i' || event.key === 'I') {
+                                document.getElementById('keyI').style.backgroundColor = 'red';
+                            } else if (event.key === 'o' || event.key === 'O') {
+                                document.getElementById('keyO').style.backgroundColor = 'red';
+                            } else if (event.key === 'p' || event.key === 'P') {
+                                document.getElementById('keyP').style.backgroundColor = 'red';
+                            } else if (event.key === 'a' || event.key === 'A') {
+                                document.getElementById('keyA').style.backgroundColor = 'red';
+                            } else if (event.key === 's' || event.key === 'S') {
+                                document.getElementById('keyS').style.backgroundColor = 'red';
+                            } else if (event.key === 'd' || event.key === 'D') {
+                                document.getElementById('keyD').style.backgroundColor = 'red';
+                            } else if (event.key === 'f' || event.key === 'F') {
+                                document.getElementById('keyF').style.backgroundColor = 'red';
+                            } else if (event.key === 'g' || event.key === 'G') {
+                                document.getElementById('keyG').style.backgroundColor = 'red';
+                            } else if (event.key === 'h' || event.key === 'H') {
+                                document.getElementById('keyH').style.backgroundColor = 'red';
+                            } else if (event.key === 'j' || event.key === 'J') {
+                                document.getElementById('keyJ').style.backgroundColor = 'red';
+                            } else if (event.key === 'k' || event.key === 'K') {
+                                document.getElementById('keyK').style.backgroundColor = 'red';
+                            } else if (event.key === 'l' || event.key === 'L') {
+                                document.getElementById('keyL').style.backgroundColor = 'red';
+                            } else if (event.key === 'z' || event.key === 'Z') {
+                                document.getElementById('keyZ').style.backgroundColor = 'red';
+                            } else if (event.key === 'x' || event.key === 'X') {
+                                document.getElementById('keyX').style.backgroundColor = 'red';
+                            } else if (event.key === 'c' || event.key === 'C') {
+                                document.getElementById('keyC').style.backgroundColor = 'red';
+                            } else if (event.key === 'v' || event.key === 'V') {
+                                document.getElementById('keyV').style.backgroundColor = 'red';
+                            } else if (event.key === 'b' || event.key === 'B') {
+                                document.getElementById('keyB').style.backgroundColor = 'red';
+                            } else if (event.key === 'n' || event.key === 'N') {
+                                document.getElementById('keyN').style.backgroundColor = 'red';
+                            } else if (event.key === 'm' || event.key === 'M') {
+                                document.getElementById('keyM').style.backgroundColor = 'red';
+                            } else if (event.key === ' ') {
+                                document.getElementById('keySpace').style.backgroundColor = 'red';
+                            }
+                        });
+
+                        document.addEventListener('keyup', function(event) {
+                            if (event.key === 'q' || event.key === 'Q') {
+                                document.getElementById('keyQ').style.backgroundColor = 'black';
+                            } else if (event.key === 'w' || event.key === 'W') {
+                                document.getElementById('keyW').style.backgroundColor = 'black';
+                            } else if (event.key === 'e' || event.key === 'E') {
+                                document.getElementById('keyE').style.backgroundColor = 'black';
+                            } else if (event.key === 'r' || event.key === 'R') {
+                                document.getElementById('keyR').style.backgroundColor = 'black';
+                            } else if (event.key === 't' || event.key === 'T') {
+                                document.getElementById('keyT').style.backgroundColor = 'black';
+                            } else if (event.key === 'y' || event.key === 'Y') {
+                                document.getElementById('keyY').style.backgroundColor = 'black';
+                            } else if (event.key === 'u' || event.key === 'U') {
+                                document.getElementById('keyU').style.backgroundColor = 'black';
+                            } else if (event.key === 'i' || event.key === 'I') {
+                                document.getElementById('keyI').style.backgroundColor = 'black';
+                            } else if (event.key === 'o' || event.key === 'O') {
+                                document.getElementById('keyO').style.backgroundColor = 'black';
+                            } else if (event.key === 'p' || event.key === 'P') {
+                                document.getElementById('keyP').style.backgroundColor = 'black';
+                            } else if (event.key === 'a' || event.key === 'A') {
+                                document.getElementById('keyA').style.backgroundColor = 'black';
+                            } else if (event.key === 's' || event.key === 'S') {
+                                document.getElementById('keyS').style.backgroundColor = 'black';
+                            } else if (event.key === 'd' || event.key === 'D') {
+                                document.getElementById('keyD').style.backgroundColor = 'black';
+                            } else if (event.key === 'f' || event.key === 'F') {
+                                document.getElementById('keyF').style.backgroundColor = 'black';
+                            } else if (event.key === 'g' || event.key === 'G') {
+                                document.getElementById('keyG').style.backgroundColor = 'black';
+                            } else if (event.key === 'h' || event.key === 'H') {
+                                document.getElementById('keyH').style.backgroundColor = 'black';
+                            } else if (event.key === 'j' || event.key === 'J') {
+                                document.getElementById('keyJ').style.backgroundColor = 'black';
+                            } else if (event.key === 'k' || event.key === 'K') {
+                                document.getElementById('keyK').style.backgroundColor = 'black';
+                            } else if (event.key === 'l' || event.key === 'L') {
+                                document.getElementById('keyL').style.backgroundColor = 'black';
+                            } else if (event.key === 'z' || event.key === 'Z') {
+                                document.getElementById('keyZ').style.backgroundColor = 'black';
+                            } else if (event.key === 'x' || event.key === 'X') {
+                                document.getElementById('keyX').style.backgroundColor = 'black';
+                            } else if (event.key === 'c' || event.key === 'C') {
+                                document.getElementById('keyC').style.backgroundColor = 'black';
+                            } else if (event.key === 'v' || event.key === 'V') {
+                                document.getElementById('keyV').style.backgroundColor = 'black';
+                            } else if (event.key === 'b' || event.key === 'B') {
+                                document.getElementById('keyB').style.backgroundColor = 'black';
+                            } else if (event.key === 'n' || event.key === 'N') {
+                                document.getElementById('keyN').style.backgroundColor = 'black';
+                            } else if (event.key === 'm' || event.key === 'M') {
+                                document.getElementById('keyM').style.backgroundColor = 'black';
+                            } else if (event.key === ' ') {
+                                document.getElementById('keySpace').style.backgroundColor = 'black';
+                            }
+                        });
+                        document.getElementById('textInput').addEventListener('input', function(event) {
+                            console.log(event.target.value);
+                        });
+                    </script>
+                </body>
+                </html>

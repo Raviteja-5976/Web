@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Currency Converter</title>
+<link rel="stylesheet" href="style.css">
+<style>
+
+</style>
+</head>
+<body>
+<div class="converter">
+  <h1><b>Currency Converter</b></h1>
+  <div>
+    <label for="fromCurrency"><b>From:</b></label><br>
+    <select id="fromCurrency">
+      <option value="INR">Indian Rupee</option>
+      <option value="USD">US Dollar</option>
+      <option value="GBP">UK Pound</option>
+      <option value="JPY">Japanese Yen</option>
+      <option value="AUD">Australian Dollar</option>
+    </select>
+    <input type="number" id="amount" placeholder="Enter amount">
+  </div>
+  <div>
+    <label for="toCurrency"><b>To:</b></label><br>
+    <select id="toCurrency">
+      <option value="INR">Indian Rupee</option>
+      <option value="USD">US Dollar</option>
+      <option value="GBP">UK Pound</option>
+      <option value="JPY">Japanese Yen</option>
+      <option value="AUD">Australian Dollar</option>
+    </select>
+    <input type="number" id="convertedAmount" placeholder="Converted amount" readonly>
+  </div>
+  <div class="spinner" id="spinner"></div>
+  <button onclick="convertCurrency()">Convert</button>
+</div>
+<script src="main.js"></script>
+</body>
+</html>

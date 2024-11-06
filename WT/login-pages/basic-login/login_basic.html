@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="/login" method="post">
+        <h2>Log In</h2>
+   
+        <div>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required placeholder="Enter your email"><br>
+        </div>
+        <div>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" minlength="8" required placeholder="Your password (min 8 characters)"><br>
+        </div>
+      
+        <button type="submit">Login</button>
+        <p><a>Register Account</a></p>
+        <p><a>Forgot Password?</a></p>
+    </form>  
+</body>
+</html>
